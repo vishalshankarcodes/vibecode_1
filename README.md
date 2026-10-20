@@ -31,3 +31,11 @@ Vite writes the deployable static website to `dist/`.
 The initial events are examples. Edits are local to each browser and are not shared across devices or visitors. A shared event administration workflow requires a backend and authentication. Uploaded images consume browser storage; smaller images are recommended. Clearing browser site data removes saved edits.
 
 Stock images load from Unsplash and fonts load from Google Fonts. No credentials are required. This is a community project, not an official university website.
+
+## GitHub Pages
+
+The Vite base is `/vibecode_1/`, so production JavaScript and CSS resolve under the repository's Pages URL. Do not publish the source checkout directly: Pages must serve the built `dist/` artifact.
+
+In GitHub repository **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source. The Pages workflow checks pull requests without deploying them. After merging into `main`, it builds and deploys `dist/`. You can also run it manually on `main` from the Actions tab.
+
+`npm run build` checks JavaScript syntax before building. Multiline HTML in `src.js` must use backtick template literals, not single- or double-quoted strings with literal line breaks.
